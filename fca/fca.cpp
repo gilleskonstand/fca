@@ -117,6 +117,10 @@ int main()
 	string s;
 	cout << "Do you like fish" << endl;
 	cin >> s;
+	/*
+	//We can not user case with strings , but we can user case with chars
+	// There should be a nothere whay 
+
 	switch (s) {
 
 	}
@@ -124,6 +128,6 @@ int main()
 	default:
 		break;
 	}
-
+	*/
 	return 0;
 }
