@@ -7,6 +7,7 @@
 #include <string>
 #include <cstring>
 #include <cctype>  
+#include <math.h>
 
 
 int main()
@@ -130,23 +131,31 @@ int main()
 	}
 	*/
 	/* 
-	 
-	 Can have the same code run for different case lables
+	  One can have the same code run for different case lables
+	  case '0': case '2': case '4':  case '6': case '8':
 	
 	*/
 
 	cout << "Please enter a digit " << endl;
 	char diga;
-// do not to print the input again do we 
-//	cin >> diga;
-//
+    cin >> diga;
 	switch (diga)
 	{ case '0': case '2': case '4':  case '6': case '8':
 		cout << diga << " is even" << endl;
 		break;
 	  case '3': case '5': case '7':  case '9':
-		 cout << diga <<" is od" << endl;
-		 break;
+		cout << diga <<" is od" << endl;
+		break;
 	}
+
+/*
+lets work a bit with the while statment
+*/
+	int while_i=0;
+	while (while_i < 100) 
+	{
+	 cout << while_i << '\t' << while_i*while_i << endl;
+	}
+
 	return 0;
 }
