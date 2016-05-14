@@ -10,12 +10,37 @@
 #include <math.h>
 
 
+using namespace std;
+//function prototyping 
+void helloWorld();
+void vectorStest();
+void IntOddorEVEN();
+void AddinSubstrakting();
+void constexprMineWithCase();
+void CharandIntValues();
+
 int main()
 {
-	using namespace std;
-	std::to_string(5);
 
-	cout << "Hello world \n";
+	to_string(5);
+
+	helloWorld();
+
+	CharandIntValues();
+
+
+	return 0;
+};
+
+
+//returne type from fuction , then name of function
+void helloWorld()
+{
+	cout << "Hello world" << endl;
+}
+
+void vectorStest()
+{
 	typedef vector<string> myVec;
 	typedef vector<int> myint;
 	//typedef char myChar[];
@@ -24,37 +49,38 @@ int main()
 	myVec V;
 	myint I;
 	int x = 5;
-	// c stile string fiunctions
-	char myChar[] = {'h','e','l','l','o','\0'}; //because ist c style need '\0'
-	                                            //to termanate ot it will keep reading
-	                                            //memmory till it does
+	// c stile string functions
+	char myChar[] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
+												  //to termanate ot it will keep reading
+												  //memmory till it does
 	cout << "myChar length " << strlen(myChar) << endl;
 	char y = 'H';
 
-
-
-   // p points to x 
+	// p points to x 
 	int* p = &x;
 	cout << "x = " << x << endl;
-    // change the value of x through p
+	// change the value of x through p
 	*p = 6;
 	cout << "x = " << x << endl;
 	x = 7;
 	cout << "x = " << x << endl;
-
 	for (int i = 0; i < 10; i++) {
 
 		//V.push_back("h");
 		//V.push_back(C);
-		
+
 	}
 	//	std::cout << mychar;
 	cout << V.size() << std::endl;
 
-	for (int i = 0;i < V.size(); ++i) {
-	cout << V[i] << " ";
-    cout << i << endl;
-}
+	for (int i = 0; i < V.size(); ++i) {
+		cout << V[i] << " ";
+		cout << i << endl;
+	}
+
+};
+
+void IntOddorEVEN() {
 
 	int n = 0;
 	double nd = 0;
@@ -63,7 +89,10 @@ int main()
 	cout << " in is : " << n << endl;
 	nd = n;
 	cout << " square root of " << n << " == " << sqrt(nd) << endl;
-    
+};
+
+void CheckDoubleWords() {
+
 	string previos = " ";
 	string current = "";
 	//this is not working with a full sentence
@@ -75,6 +104,9 @@ int main()
 		cout << " previos word :" << endl;
 	}
 
+};
+
+void AddinSubstrakting() {
 	int a{ 0 };
 	cout << "value f a := " << a << endl;
 	a += 7;
@@ -89,7 +121,10 @@ int main()
 	cout << "value of b -=9 : " << b << endl;
 	b *= 2;
 	cout << "value of b *=2 : " << b << endl;
+};
 
+void constexprMineWithCase() {
+	int n = 0;
 	constexpr double pi = 3.14159265359;
 	constexpr int max = 17;
 	const int c2 = n + 7;
@@ -97,7 +132,7 @@ int main()
 	max + 2;
 
 	constexpr double cm_per_inch = 2.54;
-	double length ;
+	double length;
 	char unit;
 
 	cout << " Please enter a lenth followed by ab unit (c or i )" << endl;
@@ -115,63 +150,73 @@ int main()
 		cout << "Sorry i do not know of the unit called" << unit << endl;
 		break;
 	}
-	
 	/*
 	//We can not user case with strings , but we can user case with chars
-	// There should be a nothere whay 
+	// There should be a nothere whay
 	string s;
 	cout << "Do you like fish" << endl;
 	cin >> s;
 
 	switch (s) {
-		}
+	}
 	{
 	default:
-		break;
+	break;
 	}
 	*/
-	/* 
-	  One can have the same code run for different case lables
-	  case '0': case '2': case '4':  case '6': case '8':
-	
+	/*
+	One can have the same code run for different case lables
+	case '0': case '2': case '4':  case '6': case '8':
+
 	*/
 
 	cout << "Please enter a digit " << endl;
 	char diga;
-    cin >> diga;
+	cin >> diga;
 	switch (diga)
-	{ case '0': case '2': case '4':  case '6': case '8':
+	{
+	case '0': case '2': case '4':  case '6': case '8':
 		cout << diga << " is even" << endl;
 		break;
-	  case '3': case '5': case '7':  case '9':
-		cout << diga <<" is od" << endl;
+	case '3': case '5': case '7':  case '9':
+		cout << diga << " is od" << endl;
 		break;
 	}
 
-/*
-lets work a bit with the while statment
-*/
-	int while_i=0;
-	while (while_i < 5) 
-	{
-	 cout << while_i << '\t' << while_i*while_i << endl;
-	 ++while_i;
-	}
-/*
-print character and its nr 
-*/
+};
+
+void whileStatment() {
+		/*
+		lets work a bit with the while statment
+		*/
+		int while_i = 0;
+		while (while_i < 5)
+		{
+			cout << while_i << '\t' << while_i*while_i << endl;
+			++while_i;
+		}
+	};
+
+
+void CharandIntValues() {
+	/*
+	print character and its nr
+	*/
 	cout << "start of the char values" << endl;
 	const char lc_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	const char uc_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	const char *cur = lc_alphabet;
+
+	cout << *cur << '\t' << (int)*cur << '\n';
+	/*
 	for (const char *cur = lc_alphabet;
-		             cur < lc_alphabet + sizeof(lc_alphabet);
-		             ++cur)
-		cout << *cur << '\t' << (int)*cur << '\n';
+	cur < lc_alphabet + sizeof(lc_alphabet);
+	++cur)
+	cout << *cur << '\t' << (int)*cur << '\n';
 	for (const char *cur = uc_alphabet;
-		             cur < uc_alphabet + sizeof(uc_alphabet);
-		             ++cur)
-		cout << *cur << '\t' << (int)*cur << '\n';
-
-
-	return 0;
-}
+	cur < uc_alphabet + sizeof(uc_alphabet);
+	++cur)
+	cout << *cur << '\t' << (int)*cur << '\n';
+	*/
+};
