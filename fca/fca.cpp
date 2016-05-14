@@ -114,16 +114,16 @@ int main()
 		cout << "Sorry i do not know of the unit called" << unit << endl;
 		break;
 	}
-	string s;
-	cout << "Do you like fish" << endl;
-	cin >> s;
+	
 	/*
 	//We can not user case with strings , but we can user case with chars
 	// There should be a nothere whay 
+	string s;
+	cout << "Do you like fish" << endl;
+	cin >> s;
 
 	switch (s) {
-
-	}
+		}
 	{
 	default:
 		break;

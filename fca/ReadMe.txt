@@ -1,11 +1,12 @@
+
+This is the start of greate things for the computer world 
+
 ========================================================================
     CONSOLE APPLICATION : fca Project Overview
 ========================================================================
 
-AppWizard has created this fca application for you.
-
 This file contains a summary of what you will find in each of the files that
-make up your fca application.
+make up the fca application.
 
 
 fca.vcxproj
@@ -38,3 +39,5 @@ AppWizard uses "TODO:" comments to indicate parts of the source code you
 should add to or customize.
 
 /////////////////////////////////////////////////////////////////////////////
+
+working thourg some of the basick things in C++ ( C++11/some C++14 std's)
