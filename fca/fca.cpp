@@ -163,9 +163,13 @@ print character and its nr
 	cout << "start of the char values" << endl;
 	const char lc_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	const char uc_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	for (const char *cur = lc_alphabet; cur < lc_alphabet + sizeof(lc_alphabet); ++cur)
+	for (const char *cur = lc_alphabet;
+		             cur < lc_alphabet + sizeof(lc_alphabet);
+		             ++cur)
 		cout << *cur << '\t' << (int)*cur << '\n';
-	for (const char *cur = uc_alphabet; cur < uc_alphabet + sizeof(uc_alphabet); ++cur)
+	for (const char *cur = uc_alphabet;
+		             cur < uc_alphabet + sizeof(uc_alphabet);
+		             ++cur)
 		cout << *cur << '\t' << (int)*cur << '\n';
 
 
