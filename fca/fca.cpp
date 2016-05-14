@@ -152,10 +152,22 @@ int main()
 lets work a bit with the while statment
 */
 	int while_i=0;
-	while (while_i < 100) 
+	while (while_i < 5) 
 	{
 	 cout << while_i << '\t' << while_i*while_i << endl;
+	 ++while_i;
 	}
+/*
+print character and its nr 
+*/
+	cout << "start of the char values" << endl;
+	const char lc_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+	const char uc_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	for (const char *cur = lc_alphabet; cur < lc_alphabet + sizeof(lc_alphabet); ++cur)
+		cout << *cur << '\t' << (int)*cur << '\n';
+	for (const char *cur = uc_alphabet; cur < uc_alphabet + sizeof(uc_alphabet); ++cur)
+		cout << *cur << '\t' << (int)*cur << '\n';
+
 
 	return 0;
 }
