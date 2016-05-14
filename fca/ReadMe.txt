@@ -39,5 +39,5 @@ AppWizard uses "TODO:" comments to indicate parts of the source code you
 should add to or customize.
 
 /////////////////////////////////////////////////////////////////////////////
+working through some of the basic things in C++ ( C++11/some C++14 std's)
 
-working thourg some of the basick things in C++ ( C++11/some C++14 std's)
