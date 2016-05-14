@@ -129,5 +129,24 @@ int main()
 		break;
 	}
 	*/
+	/* 
+	 
+	 Can have the same code run for different case lables
+	
+	*/
+
+	cout << "Please enter a digit " << endl;
+	char diga;
+// do not to print the input again do we 
+//	cin >> diga;
+//
+	switch (diga)
+	{ case '0': case '2': case '4':  case '6': case '8':
+		cout << diga << " is even" << endl;
+		break;
+	  case '3': case '5': case '7':  case '9':
+		 cout << diga <<" is od" << endl;
+		 break;
+	}
 	return 0;
 }
