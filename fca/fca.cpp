@@ -12,6 +12,10 @@
 
 using namespace std;
 //function prototyping 
+
+//used to check how many elements are in an array for example
+#define NUMBEROFELEMENTS(x)  (int)(sizeof (x) / sizeof (x[0])) 
+
 void helloWorld();
 void vectorStest();
 void vectorCharArry();
@@ -20,6 +24,8 @@ void AddinSubstrakting();
 void constexprMineWithCase();
 void CharandIntValues();
 void ChangeContentofxviapointer();
+void PlayingWithInLineASM();
+void Sorry_word();
 
 int main()
 {
@@ -27,10 +33,43 @@ int main()
 
 	//helloWorld();
 	//vectorStest();
-	vectorCharArry();
+	//vectorCharArry();
 	//CharandIntValues();
+	Sorry_word();
 
 	return 0;
+};
+
+void print_squaare(int v) {
+};
+void Sorry_word() {
+	cout << " sorry !" << endl;
+}
+void PlayingWithInLineASM() {
+	/*
+	// At this stage Visual Studio is not suporting asm inline with 64 bit.. relay sad ...
+	char format[] = "%s %s\n";
+	char hello[] = "Hello";
+	char world[] = "earth";
+
+	__asm // start ASM code here
+	{
+	mov  eax, offset world // move the address of world to eax
+	push eax         // Push the address of world to the stack
+	mov  eax, offset hello // eax = &amp;(hello[0])
+	push eax               // push hello to the stack
+	mov  eax, offset format // eax = format
+	push eax                // push format to the stack
+	call printf // here is the problem printf is not define
+	// at the time of compilation.
+	// It will be define in run time.
+	//clean up the stack so that main can exit cleanly
+	//use the unused register ebx to do the cleanup
+	pop  ebx
+	pop  ebx
+	pop  ebx
+	} // end of ASM code
+	*/
 };
 
 
@@ -61,18 +100,26 @@ void CharCharArraysTest()
 
 void vectorCharArry()
 {
-	//char test[] = "AbCdE";
-	char test[4] = 'A';
-	char test[1] = 'b';
-	char test[2] = 'c';
-	char test[4] = 'D';
-
+	//char test[6] = { "AbCdE" };
+	char test[30] = { "" }; // need to ineselise the fill arry so it do not get fully stuff reading teh array
+	test[0] = 'A';
+	test[1] = 'b';
+	test[2] = 'C';
+	test[3] = 'd';
+	test[4] = 'E';
 	vector<string> v;
 	v.push_back(test);
+
+	char element2[6] = { "TVXYZ" };
+	v.push_back(element2);
+
 //get the compilet to get the type of i with auto 
 	for (auto i = v.begin(); i != v.end(); ++i)
-		cout << "using *i to print " << *i << ' ' << endl;
-	//cout << "Vector v , lets see if it working" << v;
+	{
+		cout << "using *i to print -->" << *i << "<-- " << endl;
+		//cout << "Vector v , lets see if it working" << v;
+	}
+	cout << " end of i loop ";
 };
 
 void vectorStest()
