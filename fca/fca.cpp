@@ -14,17 +14,20 @@ using namespace std;
 //function prototyping 
 void helloWorld();
 void vectorStest();
+void vectorCharArry();
 void IntOddorEVEN();
 void AddinSubstrakting();
 void constexprMineWithCase();
 void CharandIntValues();
+void ChangeContentofxviapointer();
 
 int main()
 {
 	//to_string(5);
 
 	//helloWorld();
-	vectorStest();
+	//vectorStest();
+	vectorCharArry();
 	//CharandIntValues();
 
 	return 0;
@@ -37,6 +40,41 @@ void helloWorld()
 	cout << "Hello world" << endl;
 }
 
+void CharCharArraysTest()
+{
+	// c stile string functions
+	char myChar[] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
+												  //to termanate ot it will keep reading
+												  //memmory till it does
+
+												  //can i declare this char arry without 
+												  //puting each one in is one '' enluser and a , between each one 
+												  // Note teh fiffereant "  and tehre is no \0 in the def , but the arry is terminated with a \0
+	char myCharTry2[] = { "hello" };//because ist c style need '\0'
+									//to termanate ot it will keep reading
+									//memmory till it does
+	cout << "myChar length " << strlen(myChar) << endl;
+	cout << "myChartry2 length " << strlen(myCharTry2) << endl;
+	cout << "myChartry2 the content of 3  " << myCharTry2[4] << endl; // remember you start with 0 so 4 is the 3rd element
+	cout << "myChar the content of 3  " << myChar[4] << endl;// remember you start with 0 so 4 is the 3rd element
+};
+
+void vectorCharArry()
+{
+	//char test[] = "AbCdE";
+	char test[4] = 'A';
+	char test[1] = 'b';
+	char test[2] = 'c';
+	char test[4] = 'D';
+
+	vector<string> v;
+	v.push_back(test);
+//get the compilet to get the type of i with auto 
+	for (auto i = v.begin(); i != v.end(); ++i)
+		cout << "using *i to print " << *i << ' ' << endl;
+	//cout << "Vector v , lets see if it working" << v;
+};
+
 void vectorStest()
 {
 	typedef vector<string> myVec;
@@ -46,32 +84,9 @@ void vectorStest()
 	myString S;
 	myVec V;
 	myint I;
-	int x = 5;
-	// c stile string functions
-	char myChar[] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
-												  //to termanate ot it will keep reading
-												  //memmory till it does
-
-	//can i declare this char arry without 
-	//puting each one in is one '' enluser and a , between each one 
-	// Note teh fiffereant "  and tehre is no \0 in the def , but the arry is terminated with a \0
-	char myCharTry2[] = { "hello" };//because ist c style need '\0'
-									//to termanate ot it will keep reading
-									//memmory till it does
-	cout << "myChar length " << strlen(myChar) << endl;
-	cout << "myChartry2 length " << strlen(myCharTry2) << endl;  
-	cout << "myChartry2 the content of 3  " << myCharTry2[4] << endl; // remember you start with 0 so 4 is teh 3rd element
-	cout << "myChar the content of 3  " << myChar[4] << endl;// remember you start with 0 so 4 is teh 3rd element
 	char y = 'H';
 
-	// p points to x 
-	int* p = &x;
-	cout << "x = " << x << endl;
-	// change the value of x through p
-	*p = 6;
-	cout << "x = " << x << endl;
-	x = 7;
-	cout << "x = " << x << endl;
+	
 	for (int i = 0; i < 10; i++) {
 
 		//V.push_back("h");
@@ -88,8 +103,20 @@ void vectorStest()
 
 };
 
-void IntOddorEVEN() {
+void ChangeContentofxviapointer()
+{
+	int x = 5;
+	// p points to x 
+	int* p = &x;
+	cout << "x = " << x << endl;
+	// change the value of x through p
+	*p = 6;
+	cout << "x = " << x << endl;
+	x = 7;
+	cout << "x = " << x << endl;
+};
 
+void IntOddorEVEN() {
 	int n = 0;
 	double nd = 0;
 	cout << "Type in a int  " << endl;
