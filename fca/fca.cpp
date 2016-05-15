@@ -61,17 +61,20 @@ void CharCharArraysTest()
 
 void vectorCharArry()
 {
-	//char test[6] = { "AbCdE" };
-	char test[30] = { "" }; // need to ineselise the fill arry so it do not get fully stuff reading teh array
+	vector<string> v;
+	
+	char test[6] = { "" }; // need to ineselize the arry 
+	                       //so it do not get funn stuff when reading the array back
 	test[0] = 'A';
 	test[1] = 'b';
 	test[2] = 'C';
 	test[3] = 'd';
 	test[4] = 'E';
-	vector<string> v;
+	//load the arry, test of size 6 termenate by "\0" into vector v 
 	v.push_back(test);
 
-	char element2[6] = { "TVXYZ" };
+	char element2[6] = { "VXYZ" };
+	//load the arry, element2 of size 5 termenate by "\0" into vector v 
 	v.push_back(element2);
 
 //get the compilet to get the type of i with auto 
@@ -236,7 +239,6 @@ void whileStatment() {
 			++while_i;
 		}
 	};
-
 
 void CharandIntValues() {
 	/*
