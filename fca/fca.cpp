@@ -11,7 +11,12 @@
 
 
 using namespace std;
+
 //function prototyping 
+
+//used to check how many elements are in an array for example
+#define NUMBEROFELEMENTS(x)  (int)(sizeof (x) / sizeof (x[0])) 
+
 void helloWorld();
 void vectorStest();
 void vectorCharArry();
@@ -20,6 +25,8 @@ void AddinSubstrakting();
 void constexprMineWithCase();
 void CharandIntValues();
 void ChangeContentofxviapointer();
+void PlayingWithInLineASM();
+void Sorry_word();
 
 int main()
 {
@@ -27,14 +34,47 @@ int main()
 
 	//helloWorld();
 	//vectorStest();
-	vectorCharArry();
+	//vectorCharArry();
 	//CharandIntValues();
+	Sorry_word();
 
 	return 0;
 };
 
 
 //returne type from fuction , then name of function
+void print_squaare(int v) {
+};
+void Sorry_word() {
+	cout << " sorry !"<< endl;
+}
+void PlayingWithInLineASM() {
+	/* 
+	// At this stage Visual Studio is not suporting asm inline with 64 bit.. relay sad ...
+	char format[] = "%s %s\n";
+	char hello[] = "Hello";
+	char world[] = "earth";
+	
+		__asm // start ASM code here
+		{
+			mov  eax, offset world // move the address of world to eax
+			push eax         // Push the address of world to the stack
+			mov  eax, offset hello // eax = &amp;(hello[0])
+			push eax               // push hello to the stack
+			mov  eax, offset format // eax = format
+			push eax                // push format to the stack
+			call printf // here is the problem printf is not define
+						// at the time of compilation.
+						// It will be define in run time.
+						//clean up the stack so that main can exit cleanly
+						//use the unused register ebx to do the cleanup
+						pop  ebx
+						pop  ebx
+						pop  ebx
+		} // end of ASM code
+  */
+};
+
 void helloWorld()
 {
 	cout << "Hello world" << endl;
