@@ -61,14 +61,19 @@ void CharCharArraysTest()
 
 void vectorCharArry()
 {
-	//char test[] = "AbCdE";
-	char test[4] = 'A';
-	char test[1] = 'b';
-	char test[2] = 'c';
-	char test[4] = 'D';
-
+	//char test[6] = { "AbCdE" };
+	char test[30] = { "" }; // need to ineselise the fill arry so it do not get fully stuff reading teh array
+	test[0] = 'A';
+	test[1] = 'b';
+	test[2] = 'C';
+	test[3] = 'd';
+	test[4] = 'E';
 	vector<string> v;
 	v.push_back(test);
+
+	char element2[6] = { "TVXYZ" };
+	v.push_back(element2);
+
 //get the compilet to get the type of i with auto 
 	for (auto i = v.begin(); i != v.end(); ++i)
 		cout << "using *i to print " << *i << ' ' << endl;
