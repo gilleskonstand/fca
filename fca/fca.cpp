@@ -21,13 +21,11 @@ void CharandIntValues();
 
 int main()
 {
+	//to_string(5);
 
-	to_string(5);
-
-	helloWorld();
-
-	CharandIntValues();
-
+	//helloWorld();
+	vectorStest();
+	//CharandIntValues();
 
 	return 0;
 };
@@ -53,7 +51,17 @@ void vectorStest()
 	char myChar[] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
 												  //to termanate ot it will keep reading
 												  //memmory till it does
+
+	//can i declare this char arry without 
+	//puting each one in is one '' enluser and a , between each one 
+	// Note teh fiffereant "  and tehre is no \0 in the def , but the arry is terminated with a \0
+	char myCharTry2[] = { "hello" };//because ist c style need '\0'
+									//to termanate ot it will keep reading
+									//memmory till it does
 	cout << "myChar length " << strlen(myChar) << endl;
+	cout << "myChartry2 length " << strlen(myCharTry2) << endl;  
+	cout << "myChartry2 the content of 3  " << myCharTry2[4] << endl; // remember you start with 0 so 4 is teh 3rd element
+	cout << "myChar the content of 3  " << myChar[4] << endl;// remember you start with 0 so 4 is teh 3rd element
 	char y = 'H';
 
 	// p points to x 
@@ -206,17 +214,23 @@ void CharandIntValues() {
 	const char lc_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	const char uc_alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	const char *cur = lc_alphabet;
-
-	cout << *cur << '\t' << (int)*cur << '\n';
-	/*
+	//const char *cur = lc_alphabet;
+	//cout << *cur << '\t' << (int)*cur << '\n';
+	
 	for (const char *cur = lc_alphabet;
-	cur < lc_alphabet + sizeof(lc_alphabet);
-	++cur)
-	cout << *cur << '\t' << (int)*cur << '\n';
+	                 cur < lc_alphabet + sizeof(lc_alphabet);
+	                 ++cur)
+	cout << *cur 
+		 << '\t' 
+		 << (int)*cur 
+		 << '\n';
+
 	for (const char *cur = uc_alphabet;
-	cur < uc_alphabet + sizeof(uc_alphabet);
-	++cur)
-	cout << *cur << '\t' << (int)*cur << '\n';
-	*/
+	                 cur < uc_alphabet + sizeof(uc_alphabet);
+	                 ++cur)
+	cout << *cur 
+		 << '\t' 
+		 << (int)*cur 
+		 << '\n';
+	
 };
