@@ -100,12 +100,10 @@ void PlayingWithInLineASM() {
 		} // end of ASM code
   */
 };
-
 void helloWorld()
 {
 	cout << "Hello world" << endl;
 }
-
 void CharCharArraysTest()
 {
 	// c stile string functions
@@ -131,7 +129,6 @@ void CharCharArraysTest()
 		cout << myChar[i] ;
 
 };
-
 void vectorCharArry()
 {
 	vector<string> v;
@@ -155,7 +152,6 @@ void vectorCharArry()
 		cout << "using *i to print " << *i << ' ' << endl;
 	//cout << "Vector v , lets see if it working" << v;
 };
-
 void vectorStest()
 {
 	typedef vector<string> myVec;
@@ -183,7 +179,6 @@ void vectorStest()
 	}
 
 };
-
 void ChangeContentofxviapointer()
 {
 	int x = 5;
@@ -196,7 +191,6 @@ void ChangeContentofxviapointer()
 	x = 7;
 	cout << "x = " << x << endl;
 };
-
 void IntOddorEVEN() {
 	int n = 0;
 	double nd = 0;
@@ -206,7 +200,6 @@ void IntOddorEVEN() {
 	nd = n;
 	cout << " square root of " << n << " == " << sqrt(nd) << endl;
 };
-
 void CheckDoubleWords() {
 
 	string previos = " ";
@@ -221,7 +214,6 @@ void CheckDoubleWords() {
 	}
 
 };
-
 void AddinSubstrakting() {
 	int a{ 0 };
 	cout << "value f a := " << a << endl;
@@ -238,7 +230,6 @@ void AddinSubstrakting() {
 	b *= 2;
 	cout << "value of b *=2 : " << b << endl;
 };
-
 void constexprMineWithCase() {
 	int n = 0;
 	constexpr double pi = 3.14159265359;
@@ -300,7 +291,6 @@ void constexprMineWithCase() {
 	}
 
 };
-
 void whileStatment() {
 		/*
 		lets work a bit with the while statment
@@ -312,7 +302,6 @@ void whileStatment() {
 			++while_i;
 		}
 	};
-
 void CharandIntValues() {
 	/*
 	print character and its nr
