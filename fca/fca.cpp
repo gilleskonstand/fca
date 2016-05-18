@@ -8,6 +8,7 @@
 #include <cstring>
 #include <cctype>  
 #include <math.h>
+#include <omp.h>  //get stuff to run in paralell... not now but later ( race conditions and all )
 #include <algorithm> // what is the standerd library for soort algorithm
 
 
