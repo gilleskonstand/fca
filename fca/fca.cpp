@@ -8,6 +8,7 @@
 #include <cstring>
 #include <cctype>  
 #include <math.h>
+#include <algorithm> // what is the standerd library for soort algorithm
 
 
 using namespace std;
@@ -24,25 +25,50 @@ void IntOddorEVEN();
 void AddinSubstrakting();
 void constexprMineWithCase();
 void CharandIntValues();
+void CharCharArraysTest();
 void ChangeContentofxviapointer();
 void PlayingWithInLineASM();
 void Sorry_word();
+void ForloopwithVectordouble();
 
 int main()
 {
 	//to_string(5);
-
-	//helloWorld();
+	//'helloWorld();
 	//vectorStest();
 	//vectorCharArry();
 	//CharandIntValues();
-	Sorry_word();
-
+	//CharCharArraysTest();
+	//Sorry_word();
+	ForloopwithVectordouble();
 	return 0;
 };
 
 
 //returne type from fuction , then name of function
+
+void ForloopwithVectordouble() {
+	vector<double>v_temps;
+
+	for (double i_temp;
+		 cin >> i_temp;) 
+	{
+		v_temps.push_back(i_temp);
+
+		double sum = 0;
+		for (double x: v_temps) {
+			sum += x;
+		};
+		cout << " Average Temperature : " << sum / v_temps.size() << endl;
+		
+		sort(v_temps.begin(),v_temps.end()); // sort of an vector orders the elements from low to high, 
+											 //whats not clear to me is if it changes the elements 
+		                                     //pointers or if it actaly moves the contes of the elements 
+
+		cout << " Median temperature: " << v_temps[v_temps.size() / 2] << endl;
+	};
+
+};
 void print_squaare(int v) {
 };
 void Sorry_word() {
@@ -83,7 +109,7 @@ void helloWorld()
 void CharCharArraysTest()
 {
 	// c stile string functions
-	char myChar[] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
+	char myChar[6] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
 												  //to termanate ot it will keep reading
 												  //memmory till it does
 
@@ -97,6 +123,13 @@ void CharCharArraysTest()
 	cout << "myChartry2 length " << strlen(myCharTry2) << endl;
 	cout << "myChartry2 the content of 3  " << myCharTry2[4] << endl; // remember you start with 0 so 4 is the 3rd element
 	cout << "myChar the content of 3  " << myChar[4] << endl;// remember you start with 0 so 4 is the 3rd element
+
+	// for (auto i = 0; i < strlen(myChar) + 3; ++i)
+	//	cout << "using myChar[i] to print " << "->" << myChar[i] << "<-" << endl;
+
+	for (auto i = 0; i < strlen(myChar) + 500; ++i)
+		cout << myChar[i] ;
+
 };
 
 void vectorCharArry()
