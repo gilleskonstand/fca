@@ -60,29 +60,24 @@ int main()
 void ForloopwithVectorStrings_bleepout() {
 
 	vector<string>v_words;
+	string s_words;
 	vector<string>v_bleepwords = { "Broccoli" };
 	int total_words = 0;
-	for (string s_words;
-		cin >> s_words;)
+	//for (string s_words;cin >> s_words;) 
+	//this read oen word at a time and not a block of word from cin 
+
+	while (getline(cin, s_words))
 	{
 		v_words.push_back(s_words);
-		/*
-		//sort the words
-		sort(v_words.begin(), v_words.end()); // sort of an vector orders the elements from low to high, 
-											  //whats not clear to me is if it changes the elements 
-											  //pointers or if it actaly moves the contes of the elements 
-        */
 		for (int i = 0; i < v_words.size(); ++i) {
-			//if (i == 0 || v_words[i] == v_bleepwords[0]) {
 			if (v_words[i] == v_bleepwords[0]) {
-				//cout << v_words[i] << "is a bleep word"<< endl;
 				v_words[i] = { "bleep" };
 			}
 			cout << v_words[i] << " ";
-	
+			total_words=i;
 		};
 		cout << endl;
-		total_words++;
+
 		cout << " total words  : " << total_words << endl;
 	};
 
