@@ -73,15 +73,17 @@ void ForloopwithVectorStrings_bleepout() {
 
 											  // now take out the if there are duplicats
 		for (int i = 0; i < v_words.size(); ++i) {
-			if (i == 0 || v_words[i] == v_bleepwords[0]) {
+			//if (i == 0 || v_words[i] == v_bleepwords[0]) {
+			if (v_words[i] == v_bleepwords[0]) {
 				//cout << v_words[i] << "is a bleep word"<< endl;
 				v_words[i] = { "bleep" };
 			}
 			cout << v_words[i] << endl;
-			total_words++;
+	
 		};
+		
+		total_words++;
 		cout << " total words  : " << total_words << endl;
-
 	};
 
 
