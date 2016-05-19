@@ -8,12 +8,18 @@
 #include <cstring>
 #include <cctype>  
 #include <math.h>
-#include <algorithm> // what is the standerd library for sort algorithm
-#include "some_functions.h"
+#include <omp.h>  //get stuff to run in paralell... not now but later ( race conditions and all )
+#include <algorithm> // what is the standerd library for soort algorithm
+
 
 using namespace std;
 
-//function prototyping void helloWorld();
+//function prototyping 
+
+//used to check how many elements are in an array for example
+#define NUMBEROFELEMENTS(x)  (int)(sizeof (x) / sizeof (x[0])) 
+
+void helloWorld();
 void vectorStest();
 void vectorCharArry();
 void IntOddorEVEN();
@@ -196,7 +202,7 @@ void CharCharArraysTest()
 void vectorCharArry()
 {
 	vector<string> v;
-
+	
 	char test[6] = { "" }; // need to ineselize the arry 
 						   //so it do not get funn stuff when reading the array back
 	test[0] = 'A';
@@ -376,7 +382,7 @@ void CharandIntValues() {
 
 	//const char *cur = lc_alphabet;
 	//cout << *cur << '\t' << (int)*cur << '\n';
-
+	
 	for (const char *cur = lc_alphabet;
 		cur < lc_alphabet + sizeof(lc_alphabet);
 		++cur)
