@@ -8,17 +8,12 @@
 #include <cstring>
 #include <cctype>  
 #include <math.h>
-#include <algorithm> // what is the standerd library for soort algorithm
-
+#include <algorithm> // what is the standerd library for sort algorithm
+#include "some_functions.h"
 
 using namespace std;
 
-//function prototyping 
-
-//used to check how many elements are in an array for example
-#define NUMBEROFELEMENTS(x)  (int)(sizeof (x) / sizeof (x[0])) 
-
-void helloWorld();
+//function prototyping void helloWorld();
 void vectorStest();
 void vectorCharArry();
 void IntOddorEVEN();
@@ -30,6 +25,13 @@ void ChangeContentofxviapointer();
 void PlayingWithInLineASM();
 void Sorry_word();
 void ForloopwithVectordouble();
+void ForloopwithVectorStrings();
+void ForloopwithVectorStrings_bleepout();
+
+
+//used to check how many elements are in an array for example
+#define NUMBEROFELEMENTS(x)  (int)(sizeof (x) / sizeof (x[0])) 
+
 
 int main()
 {
@@ -40,30 +42,92 @@ int main()
 	//CharandIntValues();
 	//CharCharArraysTest();
 	//Sorry_word();
-	ForloopwithVectordouble();
+	//ForloopwithVectordouble();
+	//ForloopwithVectorStrings();
+	ForloopwithVectorStrings_bleepout();
 	return 0;
 };
 
-
 //returne type from fuction , then name of function
 
+
+void ForloopwithVectorStrings_bleepout() {
+
+	vector<string>v_words;
+	vector<string>v_bleepwords = { "Broccoli" };
+	int total_words = 0;
+	for (string s_words;
+		cin >> s_words;)
+	{
+		v_words.push_back(s_words);
+		//sort the words
+		sort(v_words.begin(), v_words.end()); // sort of an vector orders the elements from low to high, 
+											  //whats not clear to me is if it changes the elements 
+											  //pointers or if it actaly moves the contes of the elements 
+
+											  // now take out the if there are duplicats
+		for (int i = 0; i < v_words.size(); ++i) {
+			if (i == 0 || v_words[i] == v_bleepwords[0]) {
+				//cout << v_words[i] << "is a bleep word"<< endl;
+				v_words[i] = { "bleep" };
+			}
+			cout << v_words[i] << endl;
+			total_words++;
+		};
+		cout << " total words  : " << total_words << endl;
+
+	};
+
+
+};
+
+void ForloopwithVectorStrings() {
+	
+	vector<string>v_words;
+	int total_words=0;
+	for (string s_words;
+		cin >> s_words;)
+	{
+		v_words.push_back(s_words);
+		//sort the words
+		sort(v_words.begin(), v_words.end()); // sort of an vector orders the elements from low to high, 
+											  //whats not clear to me is if it changes the elements 
+											  //pointers or if it actaly moves the contes of the elements 
+
+		// now take out the if there are duplicats
+		for (int i = 0; i < v_words.size();++i) {
+			if (i == 0 || v_words[i - 1] != v_words[i])
+				cout << v_words[i] << endl;
+			++total_words;
+		};
+		cout << " total words  : " << total_words << endl;
+
+	};
+
+};
 void ForloopwithVectordouble() {
+	//Seriosn bug in this proess as it sorts teh elements and /2 
+	//to get the median , beaces teh elements in the vecto is 
+	//of tipe int you will have a reserf if teh numbeer of elements are odd
+	// this will crash the program becase there is no ".3 or .4" of a element 
+	//Also this is incorect to calculate the Median 
+	// should come bac to this.
 	vector<double>v_temps;
 
 	for (double i_temp;
-		 cin >> i_temp;) 
+		cin >> i_temp;)
 	{
 		v_temps.push_back(i_temp);
 
 		double sum = 0;
-		for (double x: v_temps) {
+		for (double x : v_temps) {
 			sum += x;
 		};
 		cout << " Average Temperature : " << sum / v_temps.size() << endl;
-		
-		sort(v_temps.begin(),v_temps.end()); // sort of an vector orders the elements from low to high, 
-											 //whats not clear to me is if it changes the elements 
-		                                     //pointers or if it actaly moves the contes of the elements 
+
+		sort(v_temps.begin(), v_temps.end()); // sort of an vector orders the elements from low to high, 
+											  //whats not clear to me is if it changes the elements 
+											  //pointers or if it actaly moves the contes of the elements 
 
 		cout << " Median temperature: " << v_temps[v_temps.size() / 2] << endl;
 	};
@@ -72,33 +136,33 @@ void ForloopwithVectordouble() {
 void print_squaare(int v) {
 };
 void Sorry_word() {
-	cout << " sorry !"<< endl;
+	cout << " sorry !" << endl;
 }
 void PlayingWithInLineASM() {
-	/* 
+	/*
 	// At this stage Visual Studio is not suporting asm inline with 64 bit.. relay sad ...
 	char format[] = "%s %s\n";
 	char hello[] = "Hello";
 	char world[] = "earth";
-	
-		__asm // start ASM code here
-		{
-			mov  eax, offset world // move the address of world to eax
-			push eax         // Push the address of world to the stack
-			mov  eax, offset hello // eax = &amp;(hello[0])
-			push eax               // push hello to the stack
-			mov  eax, offset format // eax = format
-			push eax                // push format to the stack
-			call printf // here is the problem printf is not define
-						// at the time of compilation.
-						// It will be define in run time.
-						//clean up the stack so that main can exit cleanly
-						//use the unused register ebx to do the cleanup
-						pop  ebx
-						pop  ebx
-						pop  ebx
-		} // end of ASM code
-  */
+
+	__asm // start ASM code here
+	{
+	mov  eax, offset world // move the address of world to eax
+	push eax         // Push the address of world to the stack
+	mov  eax, offset hello // eax = &amp;(hello[0])
+	push eax               // push hello to the stack
+	mov  eax, offset format // eax = format
+	push eax                // push format to the stack
+	call printf // here is the problem printf is not define
+	// at the time of compilation.
+	// It will be define in run time.
+	//clean up the stack so that main can exit cleanly
+	//use the unused register ebx to do the cleanup
+	pop  ebx
+	pop  ebx
+	pop  ebx
+	} // end of ASM code
+	*/
 };
 void helloWorld()
 {
@@ -108,12 +172,12 @@ void CharCharArraysTest()
 {
 	// c stile string functions
 	char myChar[6] = { 'h','e','l','l','o','\0' }; //because ist c style need '\0'
-												  //to termanate ot it will keep reading
-												  //memmory till it does
+												   //to termanate ot it will keep reading
+												   //memmory till it does
 
-												  //can i declare this char arry without 
-												  //puting each one in is one '' enluser and a , between each one 
-												  // Note teh fiffereant "  and tehre is no \0 in the def , but the arry is terminated with a \0
+												   //can i declare this char arry without 
+												   //puting each one in is one '' enluser and a , between each one 
+												   // Note teh fiffereant "  and tehre is no \0 in the def , but the arry is terminated with a \0
 	char myCharTry2[] = { "hello" };//because ist c style need '\0'
 									//to termanate ot it will keep reading
 									//memmory till it does
@@ -122,19 +186,19 @@ void CharCharArraysTest()
 	cout << "myChartry2 the content of 3  " << myCharTry2[4] << endl; // remember you start with 0 so 4 is the 3rd element
 	cout << "myChar the content of 3  " << myChar[4] << endl;// remember you start with 0 so 4 is the 3rd element
 
-	// for (auto i = 0; i < strlen(myChar) + 3; ++i)
-	//	cout << "using myChar[i] to print " << "->" << myChar[i] << "<-" << endl;
+															 // for (auto i = 0; i < strlen(myChar) + 3; ++i)
+															 //	cout << "using myChar[i] to print " << "->" << myChar[i] << "<-" << endl;
 
 	for (auto i = 0; i < strlen(myChar) + 500; ++i)
-		cout << myChar[i] ;
+		cout << myChar[i];
 
 };
 void vectorCharArry()
 {
 	vector<string> v;
-	
+
 	char test[6] = { "" }; // need to ineselize the arry 
-	                       //so it do not get funn stuff when reading the array back
+						   //so it do not get funn stuff when reading the array back
 	test[0] = 'A';
 	test[1] = 'b';
 	test[2] = 'C';
@@ -147,7 +211,7 @@ void vectorCharArry()
 	//load the arry, element2 of size 5 termenate by "\0" into vector v 
 	v.push_back(element2);
 
-//get the compilet to get the type of i with auto 
+	//get the compilet to get the type of i with auto 
 	for (auto i = v.begin(); i != v.end(); ++i)
 		cout << "using *i to print " << *i << ' ' << endl;
 	//cout << "Vector v , lets see if it working" << v;
@@ -163,7 +227,7 @@ void vectorStest()
 	myint I;
 	char y = 'H';
 
-	
+
 	for (int i = 0; i < 10; i++) {
 
 		//V.push_back("h");
@@ -292,16 +356,16 @@ void constexprMineWithCase() {
 
 };
 void whileStatment() {
-		/*
-		lets work a bit with the while statment
-		*/
-		int while_i = 0;
-		while (while_i < 5)
-		{
-			cout << while_i << '\t' << while_i*while_i << endl;
-			++while_i;
-		}
-	};
+	/*
+	lets work a bit with the while statment
+	*/
+	int while_i = 0;
+	while (while_i < 5)
+	{
+		cout << while_i << '\t' << while_i*while_i << endl;
+		++while_i;
+	}
+};
 void CharandIntValues() {
 	/*
 	print character and its nr
@@ -312,21 +376,21 @@ void CharandIntValues() {
 
 	//const char *cur = lc_alphabet;
 	//cout << *cur << '\t' << (int)*cur << '\n';
-	
+
 	for (const char *cur = lc_alphabet;
-	                 cur < lc_alphabet + sizeof(lc_alphabet);
-	                 ++cur)
-	cout << *cur 
-		 << '\t' 
-		 << (int)*cur 
-		 << '\n';
+		cur < lc_alphabet + sizeof(lc_alphabet);
+		++cur)
+		cout << *cur
+		<< '\t'
+		<< (int)*cur
+		<< '\n';
 
 	for (const char *cur = uc_alphabet;
-	                 cur < uc_alphabet + sizeof(uc_alphabet);
-	                 ++cur)
-	cout << *cur 
-		 << '\t' 
-		 << (int)*cur 
-		 << '\n';
-	
+		cur < uc_alphabet + sizeof(uc_alphabet);
+		++cur)
+		cout << *cur
+		<< '\t'
+		<< (int)*cur
+		<< '\n';
+
 };
