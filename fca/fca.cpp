@@ -66,22 +66,22 @@ void ForloopwithVectorStrings_bleepout() {
 		cin >> s_words;)
 	{
 		v_words.push_back(s_words);
+		/*
 		//sort the words
 		sort(v_words.begin(), v_words.end()); // sort of an vector orders the elements from low to high, 
 											  //whats not clear to me is if it changes the elements 
 											  //pointers or if it actaly moves the contes of the elements 
-
-											  // now take out the if there are duplicats
+        */
 		for (int i = 0; i < v_words.size(); ++i) {
 			//if (i == 0 || v_words[i] == v_bleepwords[0]) {
 			if (v_words[i] == v_bleepwords[0]) {
 				//cout << v_words[i] << "is a bleep word"<< endl;
 				v_words[i] = { "bleep" };
 			}
-			cout << v_words[i] << endl;
+			cout << v_words[i] << " ";
 	
 		};
-		
+		cout << endl;
 		total_words++;
 		cout << " total words  : " << total_words << endl;
 	};
