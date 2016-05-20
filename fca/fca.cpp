@@ -61,23 +61,23 @@ void ForloopwithVectorStrings_bleepout() {
 
 	vector<string>v_words;
 	string s_words;
-	vector<string>v_bleepwords = { "Broccoli" };
+	vector<string>v_bleepwords = { "Broccoli","TouFo" };
 	int total_words = 0;
 	//for (string s_words;cin >> s_words;) 
 	//this read oen word at a time and not a block of word from cin 
 
 	while (getline(cin, s_words))
 	{
+		if (s_words == v_bleepwords[0] || s_words == v_bleepwords[1]) {
+			s_words = { "bleep" };
+		}
 		v_words.push_back(s_words);
-		for (int i = 0; i < v_words.size(); ++i) {
-			if (v_words[i] == v_bleepwords[0]) {
-				v_words[i] = { "bleep" };
-			}
-			cout << v_words[i] << " ";
-			total_words=i;
-		};
-		cout << endl;
 
+		total_words = total_words + 1;
+		
+		for (int i = 0; i < v_words.size(); ++i) {
+			cout << v_words[i] << endl;
+			}
 		cout << " total words  : " << total_words << endl;
 	};
 
