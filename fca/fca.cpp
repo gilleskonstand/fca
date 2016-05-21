@@ -379,8 +379,8 @@ public:
 int main()
 {
 	MyfirstClass Myclass;
-	Myclass.ForloopwithVectorStrings_bleepout();
-	Myclass.
+	//Myclass.ForloopwithVectorStrings_bleepout();
+	Myclass.CheckDoubleWords();
 
 
 	return 0;
